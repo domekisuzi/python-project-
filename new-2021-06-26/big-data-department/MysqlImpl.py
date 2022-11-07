@@ -32,8 +32,9 @@ def insert_student(result):
         way = i[1]
         id = eval(i[2])
         id_number = i[3]
-        sql = "insert ignore into student(`id`,`name`,`id_number`,`way`) values(%(id)s,%(name)s ,%(id_number)s, %(way)s)"
-        params = {'id': id, 'name': name, 'id_number': id_number, 'way': way}
+        grade =  eval(i[5])
+        sql = "insert ignore into student(`id`,`name`,`id_number`,`way`,`grade`) values(%(id)s,%(name)s ,%(id_number)s, %(way)s,%(grade)s)"
+        params = {'id': id, 'name': name, 'id_number': id_number, 'way': way,'grade':grade}
         print(params)
         try:
             print(cur.execute(sql, params))
@@ -61,8 +62,9 @@ def insert_but_student(result):
 # 插入学生信息
 # insert_student(GetInformation.get_information_by_sheet_name(GetInformation.STUDENT))
 
+
 # 插入管理信息
-# insert_but_student(GetInformation.get_information_by_sheet_name(GetInformation.STUDENT_BUT))
+insert_but_student(GetInformation.get_information_by_sheet_name(GetInformation.STUDENT_BUT))
 
 # 插入答辩信息
-insert_but(GetInformation.get_information_by_sheet_name(GetInformation.BUT))
+# insert_but(GetInformation.get_information_by_sheet_name(GetInformation.BUT))

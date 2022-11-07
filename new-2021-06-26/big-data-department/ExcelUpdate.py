@@ -3,7 +3,7 @@ from openpyxl import load_workbook
 from functools import reduce
 
 
-path = 'E:/OneDrive - stu.csust.edu.cn/桌面/答辩结果表.xlsx'
+path = 'D:/答辩结果表.xlsx'
 #用于读
 worksheet = xlrd.open_workbook(path)
 #用于写入
@@ -15,6 +15,7 @@ STUDENT = "Sheet1"
 BUT = "Sheet2"
 STUDENT_BUT = "Sheet3"
 START_ROW = 1
+
 
 # 应该从数据库上查找比较方便,从单元表里扣，并且写入数据
 def update_sheet3():

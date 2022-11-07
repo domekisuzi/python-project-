@@ -26,6 +26,7 @@ class DetailGetSpider(scrapy.Spider):
     def parse(self, response):
         tr = response.xpath('/html/body/div[2]/div[4]/table/tbody/tr')
         for td in tr:
+
             item = ShixunItem()
             item['name'] = td.xpath('/html/body/div[2]/h1/span/text()').extract_first()
             item['date'] = td.xpath('./td[1]/text()').extract_first()

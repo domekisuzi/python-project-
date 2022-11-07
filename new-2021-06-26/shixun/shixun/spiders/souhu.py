@@ -10,7 +10,7 @@ class SouhuSpider(scrapy.Spider):
     urls = []
 
     def __init__(self):  # 初始化,用于获取url列表
-        f = open(r'E:\python_project\new-2021-06-26\shixun\shixun\spiders\url1.text', 'r',encoding='utf-8')
+        f = open(r'D:\python_project\all\python-project-\new-2021-06-26\shixun\shixun\spiders\url1.text', 'r',encoding='utf-8')
         while True:
             s = f.readline().replace('\n', '')
             if s:
